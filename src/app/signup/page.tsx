@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, FormEvent } from 'react';
-import { supabase } from '../../utils/supabaseClient';
+import supabase from '../../utils/supabaseClient';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
