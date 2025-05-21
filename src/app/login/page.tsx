@@ -4,6 +4,8 @@ import { useState, FormEvent } from 'react';
 import { supabase } from '../../utils/supabaseClient';
 import { useRouter } from 'next/navigation';
 
+export const dynamic = 'force-dynamic';
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
