@@ -35,7 +35,7 @@ function SignupContent() {
       email,
       password,
       options: {
-        emailRedirectTo: `${location.origin}/verified`,
+        emailRedirectTo: `${window.location.origin}/verified`,
       },
     });
 
