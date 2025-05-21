@@ -4,10 +4,12 @@ import { useState, useEffect, FormEvent } from 'react';
 import supabase from '../../utils/supabaseClient';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export const dynamic = 'force-dynamic';
 
-export default function Signup() {
+// Wrap the search params usage in a separate component
+function SignupContent() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -33,7 +35,7 @@ export default function Signup() {
       email,
       password,
       options: {
-        emailRedirectTo: `${location.origin}/verified`, // 👈 important
+        emailRedirectTo: `${location.origin}/verified`,
       },
     });
 
@@ -82,5 +84,14 @@ export default function Signup() {
         Already have an account? <Link href="/login">Login</Link>
       </p>
     </main>
+  );
+}
+
+// Main component with Suspense boundary
+export default function Signup() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignupContent />
+    </Suspense>
   );
 }
