@@ -1,0 +1,149 @@
+/* src/styles/globals.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Fade in animation for pages */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Container styling */
+.container {
+  max-width: 420px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Form input styling */
+input[type='email'],
+input[type='password'] {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  box-shadow: inset 0 0 6px rgba(255 255 255 / 0.2);
+  background-color: rgba(255 255 255 / 0.1);
+  color: white;
+}
+
+input[type='email']:focus,
+input[type='password']:focus {
+  box-shadow: 0 0 12px 2px #fff;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background: #764ba2;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(118, 75, 162, 0.6);
+}
+
+button:hover {
+  background: #667eea;
+  box-shadow: 0 6px 18px rgba(102, 126, 234, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Alert styles */
+.alert {
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.alert-success {
+  background-color: rgba(40, 167, 69, 0.85);
+  color: white;
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.85);
+  color: white;
+}
+
+.alert-info {
+  background-color: rgba(23, 162, 184, 0.85);
+  color: white;
+}
+
+/* Link button */
+.link-button {
+  background: none;
+  border: none;
+  color: #89cff0;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+.link-button:hover {
+  color: #cde7f0;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(270deg, #764ba2, #667eea, #764ba2);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+  filter: blur(60px);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+input::placeholder {
+  color: white;
+}
